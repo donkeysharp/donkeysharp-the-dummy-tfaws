@@ -23,24 +23,14 @@ variable "availability_zones" {
   description = "List of availability zones"
 }
 
-variable "public_subnet_1_cidr" {
-  type = string
-  description = "Public subnet 1 CIDR block"
+variable "public_subnets_cidr" {
+  type = list(string)
+  description = "Public subnets CIDR blocks"
 }
 
-variable "public_subnet_2_cidr" {
-  type = string
-  description = "Public subnet 1 CIDR block"
-}
-
-variable "private_subnet_1_cidr" {
-  type = string
-  description = "Private subnet 1 CIDR block"
-}
-
-variable "private_subnet_2_cidr" {
-  type = string
-  description = "Private subnet 1 CIDR block"
+variable "private_subnets_cidr" {
+  type = list(string)
+  description = "Private subnets CIDR blocks"
 }
 
 variable "nat_instance_eip" {
