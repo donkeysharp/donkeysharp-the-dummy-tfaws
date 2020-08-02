@@ -145,13 +145,13 @@ resource "aws_route_table" "private_rt" {
 resource "aws_route_table_association" "public_subnets_route_table_assoc" {
   count          = length(var.availability_zones)
   subnet_id      = aws_subnet.public_subnets[count.index].id
-  route_table_id = aws_route_table.public_route_tables[count.index].id
+  route_table_id = aws_route_table.public_rt.id
 }
 
 resource "aws_route_table_association" "private_subnets_route_table_assoc" {
   count          = length(var.availability_zones)
   subnet_id      = aws_subnet.private_subnets[count.index].id
-  route_table_id = aws_route_table.private_route_tables[count.index].id
+  route_table_id = aws_route_table.private_rt.id
 }
 
 resource "aws_route" "public_routes" {
