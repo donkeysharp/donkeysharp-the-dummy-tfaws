@@ -22,6 +22,10 @@ resource "aws_launch_configuration" "ecs_instances" {
     echo ECS_CLUSTER="${aws_ecs_cluster.cluster.name}" >> /etc/ecs/ecs.config
   EOF
 
+  root_block_device {
+    volume_size = var.nodes_root_volume_size
+  }
+
   iam_instance_profile = aws_iam_instance_profile.default.name
 
   lifecycle {

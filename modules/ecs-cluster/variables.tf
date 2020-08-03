@@ -28,6 +28,12 @@ variable "security_groups_ids" {
   description = "List of security group ids for the autoscaling group instances"
 }
 
+variable "nodes_root_volume_size" {
+  type = number
+  default = 8
+  description = "Size of the root volume for the instance"
+}
+
 variable "max_size" {
   type = number
   default = 0
