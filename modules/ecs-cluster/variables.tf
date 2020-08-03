@@ -8,11 +8,6 @@ variable "stage" {
   description = "Stage for the prefix"
 }
 
-variable "project" {
-  type = string
-  description = "Project name for tags and prefix"
-}
-
 variable "instance_type" {
   type = string
   description = "Instance type of autoscaling group instances"

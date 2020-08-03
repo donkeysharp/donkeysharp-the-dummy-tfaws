@@ -8,11 +8,6 @@ variable "stage" {
   description = "Stage for the prefix"
 }
 
-variable "project" {
-  type = string
-  description = "Project name for tags and prefix"
-}
-
 variable "cidr_block" {
   type = string
   description = "CIDR block for the VPC"
