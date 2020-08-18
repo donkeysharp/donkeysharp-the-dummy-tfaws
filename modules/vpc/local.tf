@@ -1,6 +1,6 @@
 locals {
   tags = {
-    "ManagedBy" = "terraform-common::vpc"
+    "ManagedBy" = "the-dummy-tfaws::vpc"
   }
 }
 

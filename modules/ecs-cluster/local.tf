@@ -1,6 +1,6 @@
 locals {
   tags = {
-    "ManagedBy" = "terraform-common::ecs"
+    "ManagedBy" = "the-dummy-tfaws::ecs"
   }
 
   auoscaling_tags =  merge(

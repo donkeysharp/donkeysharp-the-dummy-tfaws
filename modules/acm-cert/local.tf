@@ -1,6 +1,6 @@
 locals {
   tags = {
-    "ManagedBy" = "terraform-common::acm"
+    "ManagedBy" = "the-dummy-tfaws::acm"
   }
 }
 
