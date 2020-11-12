@@ -46,6 +46,11 @@ resource "aws_db_instance" "db" {
   username                = var.database_username
   password                = var.database_password
 
+  lifecycle {
+    create_before_destroy = true
+    ignore_changes        = [engine_version]
+  }
+
   tags = merge(
     module.prefix.tags,
     local.tags,
