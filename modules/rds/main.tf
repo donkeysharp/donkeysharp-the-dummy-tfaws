@@ -39,7 +39,7 @@ resource "aws_db_instance" "db" {
   db_subnet_group_name    = aws_db_subnet_group.default.name
   vpc_security_group_ids  = length(var.security_groups) == 0 ? [aws_security_group.default[0].id] : var.security_groups
   copy_tags_to_snapshot   = var.copy_tags_to_snapshot
-  deletion_protection     = var.deletecion_protection
+  deletion_protection     = var.deletion_protection
   skip_final_snapshot     = var.skip_final_snapshot
 
   name                    = var.database_name

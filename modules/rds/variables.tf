@@ -77,7 +77,7 @@ variable "copy_tags_to_snapshot" {
   default = true
 }
 
-variable "deletecion_protection" {
+variable "deletion_protection" {
   type = bool
   description = "Enable deletion protection"
   default = false
