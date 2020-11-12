@@ -40,6 +40,7 @@ resource "aws_db_instance" "db" {
   vpc_security_group_ids  = length(var.security_groups) == 0 ? [aws_security_group.default[0].id] : var.security_groups
   copy_tags_to_snapshot   = var.copy_tags_to_snapshot
   deletion_protection     = var.deletecion_protection
+  skip_final_snapshot     = var.skip_final_snapshot
 
   name                    = var.database_name
   username                = var.database_username

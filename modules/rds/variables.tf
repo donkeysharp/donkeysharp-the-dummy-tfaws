@@ -83,6 +83,12 @@ variable "deletecion_protection" {
   default = false
 }
 
+variable "skip_final_snapshot" {
+  type = bool
+  description = "Set whether to skip or not the final snapshot"
+  default = false
+}
+
 variable "database_name" {
   type = string
   description = "Database Name"
