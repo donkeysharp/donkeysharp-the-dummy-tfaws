@@ -31,6 +31,11 @@ resource "aws_iam_role_policy_attachment" "default" {
   policy_arn = "arn:aws:iam::aws:policy/service-role/AmazonEC2ContainerServiceforEC2Role"
 }
 
+resource "aws_iam_role_policy_attachment" "cloudwatch" {
+  role       = aws_iam_role.ecs_nodes_role.name
+  policy_arn = "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+}
+
 resource "aws_iam_instance_profile" "default" {
   name = "${module.prefix.id}-ecs-nodes-profile"
   role = aws_iam_role.ecs_nodes_role.name
