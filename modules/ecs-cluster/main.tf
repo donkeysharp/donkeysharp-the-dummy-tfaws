@@ -15,12 +15,7 @@ resource "aws_launch_configuration" "ecs_instances" {
   instance_type    = var.instance_type
   key_name         = var.key_name
   security_groups  = var.security_groups_ids
-  user_data        = <<EOF
-    #!/bin/bash
-    echo "Install aws-cli"
-    yum install -y aws-cli
-    echo ECS_CLUSTER="${aws_ecs_cluster.cluster.name}" >> /etc/ecs/ecs.config
-  EOF
+  user_data        = data.template_file.cloud_config.rendered
 
   root_block_device {
     volume_size = var.nodes_root_volume_size
