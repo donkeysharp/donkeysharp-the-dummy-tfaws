@@ -6,6 +6,10 @@ output "ecs_cluster_arn" {
   value = aws_ecs_cluster.cluster.arn
 }
 
+output "ecs_cluster_name" {
+  value = aws_ecs_cluster.cluster.name
+}
+
 output "launch_configuration_id" {
   value = aws_launch_configuration.ecs_instances.id
 }
