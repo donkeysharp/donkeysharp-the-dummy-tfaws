@@ -111,6 +111,12 @@ resource "aws_instance" "nat_instance" {
       "Name" = "${module.prefix.id}-nat-instance"
     },
   )
+
+  lifecycle {
+    ignore_changes = [
+      ami
+    ]
+  }
 }
 
 resource "aws_eip_association" "nat_eip_assoc" {
