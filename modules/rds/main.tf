@@ -41,6 +41,10 @@ resource "aws_db_instance" "db" {
   copy_tags_to_snapshot   = var.copy_tags_to_snapshot
   deletion_protection     = var.deletion_protection
   skip_final_snapshot     = var.skip_final_snapshot
+  # Used to create an instance based on a snapshot
+  snapshot_identifier     = var.snapshot_identifier != "" ? var.snapshot_identifier : null
+  # When skip_final_snapshot is false it will create a snapshot with the given name
+  final_snapshot_identifier = !var.skip_final_snapshot ? "${module.prefix.id}-${var.instance_name}-final-snapshot" : null
 
   name                    = var.database_name
   username                = var.database_username

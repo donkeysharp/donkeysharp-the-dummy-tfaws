@@ -89,6 +89,12 @@ variable "skip_final_snapshot" {
   default = false
 }
 
+variable "snapshot_identifier" {
+  type = string
+  description = "(optional) Specifies whether or not to create the instance from a snapshot"
+  default = ""
+}
+
 variable "database_name" {
   type = string
   description = "Database Name"
